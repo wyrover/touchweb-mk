@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>眯客</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../src/assets/styles/normalize.css">
+    <link rel="stylesheet" href="../../src/assets/styles/common.css">
+    <link rel="stylesheet" href="../../src/assets/styles/fonts.css">
+    <link rel="stylesheet" href="city.css">
+</head>
+
+<body class="app">
+    <div class="app-body city-list">
+        <header class="app-header text-white ">
+            <div class="m-flex">
+                <form action="javascript:;" class="search-input">
+                    <input type="search" data-aria-clear-label aria-label v-model="$root.keyword" @search="keyWordSearch()" placeholder="酒店名/地址/关键字">
+                </form>
+                <label class="text-right btn-header-cancel">取消</label>
+            </div>
+        </header>
+        <section class="city-result">
+            <a href="">sh 上海</a>
+            <a href="">sh 上海</a>
+            <a href="">sh 上海</a>
+            <a href="">sh 上海</a>
+        </section>
+        <section class="city-current">
+            <h3>当前定位城市</h3>
+            <div class="city-btns">
+                <a href="javascript:;">重庆</a>
+            </div>
+        </section>
+        <section class="city-all">
+            <h3>A</h3>
+            <div class="city-item">
+                <a href="javascript:;">安阳市</a>
+            </div>
+            <h3 class="active">B</h3>
+            <div class="city-item">
+                <a href="javascript:;">安阳市</a>
+                <a href="javascript:;">安阳市</a>
+                <a href="javascript:;">安阳市</a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

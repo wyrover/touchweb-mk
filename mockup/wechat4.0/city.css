@@ -1,0 +1,93 @@
+.city-list {}
+
+.city-list .city-result{
+    width: 100%;
+    background-color: rgba(17, 25, 41, 0.6);
+}
+
+.city-list .search-input {
+    flex: 1;
+}
+
+.city-list .search-input input {
+    width: 100%;
+    border: none;
+    height: 2.8rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4rem;
+    line-height: 100%;
+    outline: none;
+    text-align: center;
+}
+
+.city-list .btn-header-cancel {
+    width: auto;
+    margin-left: 1.3rem;
+}
+
+.city-current a,.city-list a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.6rem;
+}                        
+
+.city-current h3, .city-all h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding:2rem 1.3rem .6rem 1.3rem;
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(17, 25, 41, 0.3);
+}
+
+.city-current h3,.city-list .city-result {
+    border-top-left-radius: .8rem;
+    border-top-right-radius: .8rem;
+}
+
+.city-current .city-btns{
+    padding: 0 1.3rem;
+    background-color: rgba(17, 25, 41, 0.6);
+    height: 5.4rem;
+}
+
+.city-current .city-btns a{
+    border: 0.1rem solid rgba(255, 255, 255, 0.9);
+    font-size: 1.6rem;
+    color:rgba(255, 255, 255, 0.9);
+    border-radius: 1.6rem;
+    display: inline-block;
+    width: 7.4rem;
+    height: 2.8rem;
+    text-align: center;
+    line-height: 2.8rem;
+    margin-top: 1.3rem;
+}
+
+
+.city-all .city-item a,.city-result a{
+    display: block;
+    margin-left: 1.3rem;
+    height: 4.4rem;
+    line-height: 4.4rem;
+}
+
+.city-all .city-item a:not(:last-child),.city-current .city-btns,.city-list .city-result a:not(:last-child){
+    border-bottom:0.1rem solid rgba(255, 255, 255, 0.1);
+}
+
+
+.city-all h3::after {
+    content: '\e90a';
+    font-family: 'mikeFonts' !important;
+    float: right;
+    height: 1.8rem;
+    width: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.city-all h3.active::after {
+    content: '\e908';
+    font-family: 'mikeFonts' !important;
+}

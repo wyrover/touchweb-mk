@@ -1,0 +1,96 @@
+.hotelComments{
+
+}
+/* header */
+.hotelComments header>*{
+    background: #4C445C;
+}
+.hotelComments header a{
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    border-bottom: 1px solid transparent;
+    text-align: center;
+    padding: 10px 0;
+}
+.hotelComments header a.on{
+    color: #ff7508;
+    border-bottom: 1px solid #ff7508;
+}
+
+/* list */
+.hotelComments section .m-list{
+    border:none;
+}
+.hotelComments section .m-list>li{
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+    padding: 10px 0;
+}
+.hotelComments section .m-list>li>.m-table>*{
+    padding-right: 1rem;
+}
+
+
+.hotelComments section .m-table{
+
+}
+.hotelComments .commentPhoto{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #fff6e5;
+    overflow: hidden;
+    margin-top: .5rem;
+}
+.hotelComments .commentPhoto img{
+    width: 100%;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hotelComments section .m-table>div:last-child{
+    width: 100%;
+    color: rgba(255,255,255,0.5);
+}
+
+.hotelComments .commentTime{
+    color: rgba(255,255,255,0.9);
+}
+.hotelComments .commentTime div:first-child{
+    width: 100%;
+    font-size: 14px;
+}
+.hotelComments .commentTime div:last-child,
+.hotelComments .commentStar{
+    color: rgba(255,255,255,0.2) !important;
+}
+.hotelComments .commentStar{
+    padding: 5px 0;
+}
+.hotelComments .commentContent{
+    
+}
+
+.hotelComments .commentReply{
+    background-color: rgba(0,0,0,0.1);
+    padding: 1rem;
+    position: relative;
+    margin-top:1.5rem;
+    line-height: 1.6rem;
+}
+.hotelComments .commentReply:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 1rem;
+    top: -0.5rem;
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid rgba(0,0,0,0.1);
+}
+.hotelComments .commentReply span{
+    color: #66615A;
+}

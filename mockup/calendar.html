@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title id="app-title" v-text="title"></title>
+     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../src/assets/styles/common.css">
+
+    <link rel="stylesheet" href="../src/assets/styles/calendar.css">
+    <script src="../src/libs/widget-mikeCalendar.js"></script>
+    <script src="../src/libs/widget-date.js"></script>
+</head>
+
+<body>
+    <section class="hotelCalendar">
+       <header>
+           <nav>选择日期</nav>
+           <div class="m-flex">
+               <div>
+                   <span>入住</span>
+                   <p id="startDate">2月15日 周二</p>
+               </div>
+               <div>
+                   <span>退房</span>
+                   <p id="endDate">2月16日 周三</p>
+               </div>
+               <div>
+                   <span>天数</span>
+                   <p id="diffDays">共1晚</p>
+               </div>
+           </div>
+       </header>
+       <section>
+           <div id="mikeCalendar"></div>
+       </section>
+    </section>
+</body>
+
+</html>
+<script>
+    var selectedCalendar=null;
+    var dom_startDate=document.getElementById('startDate'),
+        dom_endDate=document.getElementById('endDate'),
+        dom_diffDays=document.getElementById('diffDays');
+
+    window.onload=function(){
+        var calendarSetting={
+            startTime:'20160315',
+            endTime:'20160330',
+            count:2,
+            isDoubleNumber: true,
+            optionCount:30,
+            clicked:function(info){
+                 console.log(info)
+                setPageInfo(info)
+            }
+        };
+        log();
+        //selectedCalendar = new mikeCalendar('mikeCalendar', calendarSetting)
+    }
+    function getShowDate(date){
+        var res=widgetDate._dateToStr(date, 'MM月dd日 ', true);
+        res+=widgetDate._workDayName(date,'cn_1');
+        return res;
+    }
+    function getDiffDays(start, end){
+        return widgetDate._diff(start, end, 'd');
+    }
+    function setPageInfo(info){
+        var startDate=info.start && widgetDate._plainDate(info.start*1+100),
+            endDate=info.end && widgetDate._plainDate(info.end*1+100);
+        var startDateStr=startDate && getShowDate(startDate),
+            endDateStr=endDate && getShowDate(endDate);
+        var diffDays=startDateStr && endDateStr && '共'+getDiffDays(startDate, endDate)+'晚';
+        dom_startDate.innerHTML= startDateStr || '';
+        dom_endDate.innerHTML= endDateStr || '';
+        dom_diffDays.innerHTML= diffDays || '';
+    }
+
+
+    //*****************************calendar 页面化*************************************
+    /*
+        curStartDate    开始时间
+        curEndDate      结束时间
+        showCalendarCount   显示日历数量
+        showCalendarDays    控制可点击天数
+        isInPeriod      是否在0点到6点之间
+        curDateStr      当前第一个可控日期时间串
+        dateList        显示页面UI的数据集
+        widgetDate      时间插件
+    */
+    /*
+        流程说明
+        1）页面可传递参数 开始时间和结束时间 通过 setCurDate 设定开始时间和结束时间
+        2）setDateList 生成用于页面显示的时间数据
+        3）setDataCheckStateCode 设置时间数据的状态
+        
+    */
+    var curStartDate=null,
+        curEndDate=null,
+        curDate=new Date(),
+        showCalendarCount=2,
+        showCalendarDays=30,
+        isInPeriod=_checkTimePeriod(curDate),
+        curDateStr=_getCurDateStr(curDate, isInPeriod),
+        dateList=[];
+    var widgetDate=widgetDate;
+    
+    //设置开始时间和结束时间
+    function setCurDate(startDate, endDate){
+        //如果开始时间和结束时间都有值，那么页面的起始时间为入参的两个时间
+        if(startDate && endDate){
+            curStartDate=widgetDate._plainDate(startDate);
+            curEndDate=widgetDate._plainDate(endDate);
+        }else{
+            //当时间在 0点到6点之间，相当于今入明离的适配
+            var _curDate= new Date(curDate);
+            if(isInPeriod){
+                curEndDate = new Date(curDate);
+                curStartDate = widgetDate._unixToDate(_curDate.setDate(_curDate.getDate() - 1));
+            }else{
+                curStartDate = new Date(curDate);
+                curEndDate = widgetDate._unixToDate(_curDate.setDate(_curDate.getDate() + 1));
+            }
+        } 
+        curStartDate=widgetDate._dateToStr(curStartDate,'yyyyMMdd',true);
+        curEndDate=widgetDate._dateToStr(curEndDate,'yyyyMMdd',true);
+    }
+    //设置用于显示的数据列表
+    function setDateList(){
+        var dateDict={},
+            startDate=new Date(curDate);
+        if(isInPeriod)
+            widgetDate._unixToDate(startDate.setDate(startDate.getDate() - 1));
+        var startDateFirstDay=widgetDate._curMonth(startDate);
+        for(var i=0; i<showCalendarCount; i++){
+            if(i > 0){
+                startDateFirstDay = widgetDate._nextMonth(startDateFirstDay);
+            }; 
+            dateDict = {
+                firstDay: startDateFirstDay,
+                days: widgetDate._monthHaveDays(startDateFirstDay),
+                dateDay: startDateFirstDay.getDay(),
+                year: startDateFirstDay.getFullYear(),
+                month: startDateFirstDay.getMonth()+1,
+                title: '',
+                loopDays: 0,
+                dateDetail: []
+            };
+            dateDict.loopDays=(dateDict.days+((dateDict.dateDay>0 && dateDict.dateDay<7)?
+                                dateDict.dateDay:0))<=35?35:42;
+            dateDict.title=widgetDate._monthName(startDateFirstDay,'cn_1') + ' '+ dateDict.year;
+            dateDict.dateDetail=_getListDateDetail(dateDict);
+            dateList.push(dateDict);
+            dateDict={};
+            loopDays=0;
+        }
+        //console.log(dateList);
+    }
+    
+    //时间的0点到6点的判断
+    function _checkTimePeriod(date){
+       var dateHour=date.getHours();
+       return (dateHour>0 && dateHour<=6);
+    }
+    
+    //根据是否在0点到6点区间，获取当前可用时间字符串形式
+    function _getCurDateStr(date, _isInPeriod){
+        if(_isInPeriod){
+            var _d=new Date(date);
+            return widgetDate._unixToStr(_d.setDate(_d.getDate() - 1), 'yyyyMMdd', true);
+        }else{
+            return widgetDate._dateToStr(date, 'yyyyMMdd', true);
+        }
+    }
+    
+    //获取用于显示的时间的列表
+    function _getListDateDetail(dateObj){console.log(dateObj);
+        var dateResource=0,
+            resList=[],
+            resDict={},
+            diff=dateObj.dateDay;
+        if(7==diff) diff=0;
+        for(var i=0; i<dateObj.loopDays; i++){
+            if(i>=diff && dateResource<=dateObj.days){
+                dateResource++;
+                resDict={
+                    day: widgetDate._dateTwoNum(dateResource),
+                    date: ''+dateObj.year+widgetDate._dateTwoNum(dateObj.month)+widgetDate._dateTwoNum(dateResource),
+                    checkStateCode: 1, //checkStateCode => 1 normal 2 start  3 on  4 end 
+                    disabled: false
+                };
+                if(resDict.date < curDateStr || showCalendarDays<=0){
+                    resDict.disabled=true;
+                }else{
+                    showCalendarDays--;
+                }
+                
+            }
+            resList.push(resDict);
+            resDict={};
+        }
+        return resList;
+    }
+    
+    //设置显示状态
+    function setDataCheckStateCode(){
+        if(!curStartDate) return;
+        var stateCode=0;
+        dateList.forEach(function(dateOptionList, i){
+            dateOptionList.dateDetail.forEach(function(dateOption, j){
+                if(!dateOption.disabled && dateOption.date){
+                    //checkStateCode => 1 normal 2 start  3 on  4 end 
+                    console.log(dateOption.date );
+                    if(dateOption.date == curStartDate){
+                        //开始时间
+                        stateCode=2;
+                    }else if(dateOption.date == curEndDate){
+                        //结束时间
+                        stateCode=4;
+                    }else if(curStartDate && curStartDate && dateOption.date>curStartDate && dateOption.date<curEndDate){
+                        //开始/结束之间的
+                        stateCode=3;
+                    }else{
+                        //正常状态
+                        stateCode=1;
+                    }
+                    dateList[i]['dateDetail'][j].checkStateCode=stateCode;
+                }  
+            })
+        })
+    }
+    
+    function log(){
+        setCurDate('20160401','20160405');
+        setDateList();
+        console.log(dateList);
+        setDataCheckStateCode();
+        
+    }
+
+
+</script>

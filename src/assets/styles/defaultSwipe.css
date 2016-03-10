@@ -1,0 +1,245 @@
+/* swipe */
+.hotelRoomBox .swiper-container {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto;
+    overflow: hidden;
+    overflow-y:visible;
+    padding: 20px 0;
+}
+.hotelRoomBox .swiper-slide {
+    /*text-align: center;*/
+    font-size: 18px;
+    width: 300px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    vertical-align: top;
+    position: relative;
+}
+
+/******************************************/
+
+.hotelRoomBox .orderCard{
+    width: 100%;
+    height: 200px;
+    background-color: rgba(22,25,42,0.3);
+    border-radius: 6px;
+    position: absolute;
+    left:0;
+    top:0;
+    overflow: hidden;
+    color: #ccc;
+}
+.hotelRoomBox .orderCard header{
+    display: table;
+    padding: 10px;
+    background-color:rgba(21,22,37,0.5);
+}
+.hotelRoomBox .orderCard header>*{
+    display: table-cell;
+    vertical-align: middle;
+}
+.hotelRoomBox .orderCard header>*:last-child{
+    width: 100%
+}
+/*图片*/
+.hotelRoomBox .orderCard header i{
+    display: inline-block;
+    width: 38px;
+}
+.hotelRoomBox .orderCard header i img{
+    width: 100%;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 50%;
+    vertical-align: middle;
+}
+/*描述*/
+.hotelRoomBox .orderCard header span{
+    display: inline-block;
+    padding-left: 8px;
+}
+.hotelRoomBox .orderCard header h3,
+.hotelRoomBox .orderCard header p{
+    font-size: 13px;
+    font-weight: 300;
+}
+.hotelRoomBox .orderCard header p{
+    font-size: 12px;
+    color: #666;
+}
+
+.hotelRoomBox .orderCard section div{
+    font-size: 35px;
+    text-align:center;
+    padding: 10px 0;
+    padding-top:20px;
+}
+.hotelRoomBox .orderCard section div span{
+    font-size: 12px;
+}
+.hotelRoomBox .orderCard section a.orderBtn{
+    display: block;
+    width: 110px;
+    height: 34px;
+    line-height: 34px;
+    background: #854E22;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    margin: auto;
+}
+
+.hotelRoomBox .on .orderCard{
+    margin-top:-15px;
+    height: 230px;
+    width: 110%;
+    margin-left:-5%;
+    color: #fff;
+    background-color: rgba(22,25,42,0.6);
+    -webkit-animation: orderCard 200ms ease-in-out;
+}
+.hotelRoomBox .on .orderCard header{
+    padding: 15px 10px;
+    background-color:rgba(21,22,37,0.8);
+    -webkit-animation: orderCardHeader 200ms ease-in-out;
+}
+.hotelRoomBox .on .orderCard header i{
+    width: 44px;
+    -webkit-animation: orderCardHeaderI 200ms ease-in-out;
+}
+.hotelRoomBox .on .orderCard header h3{
+    font-size: 14px;
+    -webkit-animation: orderCardHeaderH 200ms ease-in-out;
+}
+.hotelRoomBox .on .orderCard header p{
+    font-size: 13px;
+    color: #999;
+    -webkit-animation: orderCardHeaderP 200ms ease-in-out;
+}
+.hotelRoomBox .on .orderCard section div{
+    font-size: 40px;
+    -webkit-animation: orderCardHeaderDiv 200ms ease-in-out;
+}
+.hotelRoomBox .on .orderCard section div span{
+    font-size: 13px;
+    -webkit-animation: orderCardHeaderSpan 200ms ease-in-out;
+}
+.hotelRoomBox .on .orderCard section a.orderBtn{
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background: #FF7C07;
+    -webkit-animation: orderCardOrderBtn 200ms ease-in-out;
+}
+@-webkit-keyframes orderCard { 
+    0%{
+        margin-top:0;
+        height: 200px;
+        width: 100%;
+        margin-left:0%;
+        color: #ccc;
+        background-color: rgba(22,25,42,0.3);
+    }
+    100%{
+        margin-top:-15px;
+        height: 230px;
+        width: 110%;
+        margin-left:-5%;
+        color: #fff;
+        background-color: rgba(22,25,42,0.6);
+    }
+}
+@-webkit-keyframes orderCardHeader { 
+    0%{
+        padding: 10px;
+        background-color:rgba(21,22,37,0.5);
+    }
+    50%{
+        padding: 13px 10px;
+    }
+    100%{
+        padding: 15px 10px;
+        background-color:rgba(21,22,37,0.8);
+    }
+}
+@-webkit-keyframes orderCardHeaderI { 
+    0%{
+        width: 38px;
+    }
+    100%{
+        width: 44px;
+    }
+}
+@-webkit-keyframes orderCardHeaderH { 
+    0%{
+        font-size: 13px;
+    }
+    100%{
+        font-size: 14px;
+    }
+}
+@-webkit-keyframes orderCardHeaderP { 
+    0%{
+        font-size: 12px;
+        color: #666;
+    }
+    100%{
+        font-size: 13px;
+        color: #999;
+    }
+}
+@-webkit-keyframes orderCardHeaderDiv { 
+    0%{
+        font-size: 35px;
+    }
+    100%{
+        font-size: 40px;
+    }
+}
+@-webkit-keyframes orderCardHeaderSpan { 
+    0%{
+        font-size: 12px;
+    }
+    100%{
+        font-size: 13px;
+    }
+}
+@-webkit-keyframes orderCardOrderBtn { 
+    0%{
+        width: 110px;
+        height: 34px;
+        line-height: 34px;
+        font-size: 14px;
+        color: #ccc;
+        background: #854E22;
+    }
+    100%{
+        width: 130px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        color: #fff;
+        background: #FF7C07;
+    }
+}

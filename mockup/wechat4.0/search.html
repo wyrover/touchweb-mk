@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>眯客</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../src/assets/styles/normalize.css">
+    <link rel="stylesheet" href="../../src/assets/styles/common.css">
+    <link rel="stylesheet" href="../../src/assets/styles/fonts.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+
+<body class="app">
+    <div class="app-body search-list">
+        <header class="app-header text-white ">
+            <div class="header1" style="display:none;">
+                <span class="header-locate">上海 <i class="icon-home_btn_jiantou_down text-dark"></i></span>
+                <span class="header-search pull-right"><i class="icon-home_btn_gerenzhongxin"></i></span>
+                <span class="header-me pull-right"><i class="icon-home_btn_sousuo"></i></span>
+            </div>
+            <div class="header2 m-flex">
+                <form action="javascript:;" class="search-input">
+                    <input type="search" data-aria-clear-label aria-label  v-model="$root.keyword" @search="keyWordSearch()" placeholder="酒店名/地址/关键字">
+                </form>
+                <label class="text-right btn-header-cancel">取消</label>
+            </div>
+        </header>
+        <div class="app-content ">
+            <div class="scrollable">
+                <section class="filter-box text-white bg-cloudburst m-flex">
+                    <div class="col">
+                        <span>位置区域</span><i class="icon-home_btn_jiantou_down text-dark"></i>
+                    </div>
+                    <div class="col">
+                        <span class="disable">全城</span><i class="icon-home_btn_jiantou_down text-dark"></i>
+                    </div>
+                    <div class="col">
+                        <span class="disable">价格不限</span><i class="icon-home_btn_jiantou_down text-dark"></i>
+                    </div>
+                    <div class="col">
+                        <span>默认排序</span><i class="icon-home_btn_jiantou_down text-dark"></i>
+                    </div>
+                </section>
+                <section class="filter-option">
+
+                    <ul class="option-list">
+                        <li class="active">附近1km</li>
+                        <li>附近3km</li>
+                        <li class="active">附近5km</li>
+                        <li>附近10km</li>
+                        <li>全城</li>
+                    </ul>
+                    <ul class="option-list" style="display:none;">
+                        <li>不限</li>
+                        <li>30元以下</li>
+                        <li>80元以下</li>
+                        <li>150元以下</li>
+                        <li>150元以上</li>
+                    </ul>
+                    <ul class="option-list" style="display:none;">
+                        <li>默认排序</li>
+                        <li>人气优先</li>
+                        <li>价格优先</li>
+                        <li>距离优先</li>
+                    </ul>
+                    <div class="filter-bg"></div>
+                </section>
+                <div class="scrollable-content bg-cloudburst">
+                    <div class="hotel-list">
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <div class="no-img">新</div>
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NkAAIAAAoAAggA9GkAAAAASUVORK5CYII="
+                                style="background-image:url('https://dn-imke-pro.qbox.me/da857944-00b2-4786-8710-e61162b006e3480.jpg?imageView/0/w/100')"
+                                alt="">
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <div class="no-img">新</div>
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NkAAIAAAoAAggA9GkAAAAASUVORK5CYII="
+                                style="background-image:url('https://dn-imke-pro.qbox.me/da857944-00b2-4786-8710-e61162b006e3480.jpg?imageView/0/w/100')"
+                                alt="">
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <div class="no-img">新</div>
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NkAAIAAAoAAggA9GkAAAAASUVORK5CYII="
+                                style="background-image:url('https://dn-imke-pro.qbox.me/da857944-00b2-4786-8710-e61162b006e3480.jpg?imageView/0/w/100')"
+                                alt="">
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <div class="no-img">新</div>
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NkAAIAAAoAAggA9GkAAAAASUVORK5CYII="
+                                style="background-image:url('https://dn-imke-pro.qbox.me/da857944-00b2-4786-8710-e61162b006e3480.jpg?imageView/0/w/100')"
+                                alt="">
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <div class="no-img">新</div>
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-list-item m-table">
+                            <div class="item-image m-table-top">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NkAAIAAAoAAggA9GkAAAAASUVORK5CYII="
+                                style="background-image:url('https://dn-imke-pro.qbox.me/da857944-00b2-4786-8710-e61162b006e3480.jpg?imageView/0/w/100')"
+                                alt="">
+                            </div>
+                            <div class="item-info">
+                                <div class="m-table-full">
+                                    <div class="text-white hotel-name">
+                                        新达旅馆
+                                    </div>
+                                    <div class="hotel-score text-dark">
+                                        <span class="star"></span>
+                                        <span>4.6分</span>
+                                        <span>2014年装修</span>
+                                        <i class="icon-home_icon_wifi"></i>
+                                    </div>
+                                    <div class="hotel-distance">
+                                        <i class="icon-home_icon_dingwei_white text-dark"></i><span class="text-dark">距您1.3km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-price text-right">
+                                    <small class="text-orange">&yen;</small>
+                                    <span class="price text-orange">88</span>
+                                    <span class="text-dark">起</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

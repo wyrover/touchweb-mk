@@ -1,0 +1,461 @@
+#order header{
+    height: 4.4rem;
+    line-height: 4.4rem;
+    position: relative;
+    top:0;
+}
+/*#order .order-content{
+    margin:0 1.3rem;
+    padding:2rem 1rem;
+    border-radius: 0.8rem;
+}*/
+#order .margin{
+    margin:0 1.3rem;
+}
+#order .padding{
+    padding:0 1rem;
+}
+#order .hotel-info{
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+}
+#order .hotel-pic-wrap{
+    padding: 0.6rem;
+    padding-top:2rem;
+}
+#order .hotel-pic{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+#order .font-6{
+    font-size: 0.6rem;
+}
+#order .font-10{
+    font-size: 1rem;
+}
+#order .font-11{
+    font-size: 1.1rem;
+}
+#order .font-12{
+    font-size: 1.2rem;
+}
+#order .font-13{
+    font-size: 1.3rem;
+}
+#order .font-16{
+    font-size: 1.6rem;
+}
+#order .font-18{
+    font-size: 1.8rem;
+}
+#order .font-48{
+    font-size: 4.8rem;
+}
+#order .margin-top-6{
+    margin-top: 0.6rem;
+}
+
+/*#order  .order-date-wrap:before{
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: transparent;
+}*/
+#order .order-date{
+    margin:0 1.3rem;
+    padding:2rem 0;
+    height: 8.5rem;
+    box-sizing: border-box;
+    position: relative;
+    width: auto;
+}
+#order .order-date .col {
+    position: relative;
+}
+#order .order-date .col:not(:first-child):before{
+    content: '';
+    position: absolute;
+    width: 0.1rem;
+    height: 2.8rem;
+    border-left:1px solid rgba(255,255,255,0.1);
+    left: 0;
+    top:50%;
+    margin-top:-1.4rem;
+
+}
+#order .dotted-line{
+    position: relative;
+    content: "";
+    height:1px;
+    width: 100%;
+    top:0;
+    left: 0;
+    bottom:0;
+    border-bottom:1px dotted rgba(255, 255, 255, 0.1);
+   ransform:scaleY(.5);
+    -o-transform:scaleY(.5);
+    transform:scaleY(.5);;
+}
+
+
+#order .checkin-user{
+    position: relative;
+    padding: 2rem 1.3rem;
+    box-sizing: border-box;
+}
+
+/*#order .checkin-user:before{
+    position: absolute;
+    content: "";
+    height:1px;
+    width: 100%;
+    top:0;
+    left: 0;
+    bottom:0;
+    border-bottom:1px dotted rgba(255, 255, 255, 0.1);
+    -webkit-transform:scaleY(.5);
+    -ms-transform:scaleY(.5);
+    -o-transform:scaleY(.5);
+    transform:scaleY(.5);;
+}*/
+#order .checkin-user:after{
+    position: absolute;
+    content: "";
+    height:1px;
+    width: 100%;
+    bottom:0;
+    left: 0;
+    bottom:0;
+    border-bottom:1px dotted rgba(255, 255, 255, 0.1);
+    -webkit-transform:scaleY(.5);
+    -ms-transform:scaleY(.5);
+    -o-transform:scaleY(.5);
+    transform:scaleY(.5);
+}
+#order .checkin-user div{
+    line-height:2.5rem;
+    height: 2.5rem;
+}
+#order .checkin-user input{
+    background-color:transparent;
+    border:none;
+    margin-left: 3rem;
+}
+#order .pay-wrap{
+    padding-top:4rem;
+}
+#order .submit-btn{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 12.5rem;
+    height: 3.9rem;
+    line-height: 3.9rem;
+    border-radius:5rem;
+    margin:2rem 0 1.3rem 0;
+}
+#order .detail-btn{
+    display: block;
+}
+#order .tips-wrap{
+    box-sizing: border-box;
+    padding:0 1.3rem 2rem 1.3rem;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+
+}
+#order .tips-wrap ol{
+    margin: 0;
+    padding: 0;
+}
+#order .tips-wrap ol li{
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin-bottom: 0.5rem;
+}
+#order .detail-wrap{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+#order .detail-wrap .detail-list{
+    max-height: 30.9rem;
+    line-height: 4.4rem;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#order .detail-wrap .border-top{
+    border-top:0.1rem solid rgba(255,255,255,0.1);
+}
+
+#order .detail-wrap .close-btn{
+    border-top:0.1rem solid rgba(255,255,255,0.1);
+}
+#order .separation-line{
+    position: relative;
+    height: 0.8rem;
+    width:auto;
+    margin:0 2.1rem;
+}
+#order .separation-line:before{
+    content: '';
+    background-image: url(../../src/assets/images/ddqr_pic_bg.png);
+    background-size: 0.8rem 0.8rem;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    left: -0.8rem;
+}
+#order .separation-line:after{
+    content: '';
+    background-image: url(../../src/assets/images/ddqr_pic_bg.png);
+    transform: rotate(180deg);
+    background-size: 0.8rem 0.8rem;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    right: -0.8rem;
+    margin-top: -0.2rem;
+}
+#order .separation-line .dotted-line{
+    line-height: 0.8rem;
+    position: relative;
+    top: 0.4rem;
+    width: auto;
+    margin:0 0.2rem;
+}
+
+/*订单详情*/
+#order .order-state{
+    position: relative;
+    height: 5.4rem;
+    line-height: 5.4rem;
+}
+#order .pay-info{
+    position: absolute;
+    right: 1.3rem;
+    top: 0;
+}
+#order .pay-info span:not(:first-child):before{
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-left:1rem;
+    border-left:0.1rem solid rgba(255, 255, 255, 0.6);
+}
+#order .order-detail-hotel{
+    padding: 2rem 1.3rem 0 1.3rem;
+    vertical-align: bottom;
+    display: table;
+}
+#order .order-detail-hotel .hotel-pic, .detail-address{
+    display: inline-block;
+}
+#order .order-detail-hotel .hotel-pic{
+    margin-right:1.3rem;
+    vertical-align: middle;
+}
+#order .order-detail-hotel .detail-address{
+    vertical-align: middle;
+}
+#order .detail-checkin-user{
+    position: relative;
+}
+#order .detail-checkin-user:after{
+    position: absolute;
+    content: "";
+    height:10px;
+    width: 100%;
+    bottom:0;
+    left: 0;
+    border-bottom:1px dotted rgba(255, 255, 255, 0.1);
+}
+#order .checkin-user-info{
+    position: relative;
+    padding:0 1.3rem;
+}
+#order .detail-checkin-user>div{
+    padding:1rem 0;
+}
+#order .detail-checkin-user>div>span:not(:first-child){
+    margin-left:3rem;
+}
+#order .checkin-user-info .modify-btn{
+    display: block;
+    position: absolute;
+    right: 1.3rem;
+    top:2rem;
+}
+#order .detail-btn-wrap{
+    height: 4.6rem;
+    line-height: 4.6rem;
+    text-align: right;
+    padding-right: 1.3rem;
+}
+#order .detail-btn-wrap a{
+    width: 8.2rem;
+    height: 3.4rem;
+    line-height: 3.4rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    border:0.1rem solid rgba(255,255,255,0.3);
+    margin:0.7rem 0 0 0.6rem;
+}
+#order .order-pay-list ul{
+    padding:0 1.3rem;
+}
+#order .order-pay-list ul li{
+    position: relative;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    padding: 1.3rem 0;
+}
+#order .hotel-pay{
+    height: 4rem;
+    line-height: 4rem;
+}
+#order .order-pay-list ul li:before{
+    position: absolute;
+    content: "";
+    height:1px;
+    width: 100%;
+    top:0;
+    left: 0;
+    bottom:0;
+    border-bottom:1px dotted rgba(255, 255, 255, 0.1);
+    -webkit-transform:scaleY(.5);
+    -ms-transform:scaleY(.5);
+    -o-transform:scaleY(.5);
+    transform:scaleY(.5);
+
+}
+#order .order-nav{
+    width: auto;
+    padding: 1rem 0 1.3rem 0;
+}
+#order .order-nav .nav-txt{
+    display: block;
+    margin-top:0.6rem;
+}
+#order .order-nav span:first-child{
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 50%;
+}
+#order .order-state-wrap{
+    position: relative;
+}
+#order .order-state-wrap ul:before{
+    content:'';
+    display:block;
+    position: absolute;
+    left: 2rem;
+    width: 0.1rem;
+    height: 10rem;
+    background: rgba(255,255,255,0.1);
+}
+#order .order-state-wrap ul li{
+    position: relative;
+    height: 5.4rem;
+    margin:1.3rem 1.3rem 1.3rem 3.8rem;
+    box-sizing: border-box;
+    border-bottom: 0.1rem dotted rgba(255, 255, 255, 0.1);
+}
+#order .order-state-wrap ul li:last-child{
+    border:0;
+}
+#order .order-state-wrap ul li p{
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+#order .order-state-wrap ul li:before{
+    content: '';
+    position: absolute;
+    left: -3.15rem;
+    top:0;
+    width:0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2);
+
+}
+#order .order-state-wrap ul li:first-child:before{
+    content: '';
+    position: absolute;
+    left: -3.5rem;
+    top:0;
+    width:1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: rgba(255,117,8,1);
+    box-shadow: 0 0 0.4rem 0.4rem rgba(255,117,8,0.4) ;
+
+}
+#order .state-title{
+    height: 5rem;
+    line-height: 5rem;
+    border-bottom: 0.1rem dotted rgba(255, 255, 255, 0.1);
+}
+/*取消订单*/
+#order   .ord-cancel .c-reason{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+#order .ord-cancel .c-title{
+    padding: 1.3rem  1.3rem 0.6rem 1.3rem;
+}
+#order .ord-cancel .reason-items{
+    padding: 0 1.3rem 0 1.3rem;
+}
+#order .ord-cancel ul{
+    margin-bottom: 1.3rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+#order .ord-cancel li{
+    height: 4.4rem;
+    line-height: 4.4rem;
+    border-bottom: 0.1rem solid  rgba(255, 255, 255, 0.1);
+}
+#order .ord-cancel li:last-child{
+    border-bottom: none;
+}
+#order .reason-items li i{
+    display: inline-block;
+    width: 1.6rem;
+    height:1.6rem;
+    border-radius: 50%;
+    border:0.1rem solid rgba(255, 255, 255, 0.3);
+    margin-right:1.3rem;
+    position: relative;
+    vertical-align: middle;
+}
+#order .reason-items li.on i{
+    border:0.1rem solid rgba(255, 117, 8, 1);
+}
+#order .ord-cancel .cancel-btn{
+    display: block;
+    text-decoration: none;
+    height: 5.2rem;
+    width: 30rem;
+    line-height: 5.2rem;
+    border-radius: 5rem;
+    margin:2rem auto;
+    border: 0.1rem solid rgba(255, 117, 8, 1)
+}
+#order .ord-cancel li .icon-home_icon_gou:before{
+    line-height: 1.6rem;
+}

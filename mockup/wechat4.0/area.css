@@ -1,0 +1,66 @@
+.sec-location .nav {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+.sec-location .nav li {
+    padding: 0;
+    list-style: none;
+}
+
+.sec-location .nav a {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
+.sec-location .nav .left {
+    width: 30%;
+    padding: 15px 0;
+    display: block;
+    padding-left: 1.3rem;
+}
+
+.sec-location .nav .active .left {
+    color: #fff;
+}
+
+.sec-location .nav .right {
+    width: 70%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    text-indent: 15px;
+    padding: 0;
+}
+
+.sec-location .nav .active .right {
+    display: block;
+}
+
+.sec-location .nav .right li {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    margin: -1px 5px 0 0;
+}
+
+.sec-location .nav .hassub .right ul {
+    background: #fff;
+    width: 60%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+}
+
+.sec-location .nav .hassub .right .active ul {
+    background: #fff;
+    display: block;
+}
+
+.sec-location .nav .hassub .right .active {
+    background: #fff;
+    display: block;
+}

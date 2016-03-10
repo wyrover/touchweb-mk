@@ -1,0 +1,500 @@
+/* colors begin */
+
+.text-white {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+.text-gray {
+    color: rgba(17, 25, 41, 0.3) !important;
+}
+
+.text-dark {
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.text-orange {
+    color: rgba(255, 117, 8, 1) !important;
+}
+
+.text-d-dark {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.text-bunting{
+    color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.bg-cloudburst {
+    background-color: rgba(17, 25, 41, 0.3) !important;
+}
+
+.bg-midnight {
+    background-color: rgba(39, 48, 66, 0.9) !important;
+}
+
+.bg-dark {
+    background-color: rgba(17, 25, 41, 0.6) !important;
+}
+
+.bg-orange {
+    background-color: rgba(255, 117, 8, 1) !important;
+}
+
+.bg-gray {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.bg-lightblue {
+    background-color: rgba(17, 25, 41, 0.8) !important;
+}
+
+.bg-night {
+    background-color: rgba(39, 48, 66, 0.6) !important;
+}
+
+.bg-blue {
+    background-color: rgba(0, 170, 241, 1) !important;
+}
+
+.bg-deepblue {
+    background-color: rgba(0, 194, 241, 1) !important;
+}
+.bg-green {
+    background-color: rgba(124, 205, 0, 1) !important;
+}
+
+.bg-burntorange {
+    background-color: rgba(255, 159, 34, 1) !important;
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+.bg-pastelred{
+    background-color: rgba(255, 101, 100, 1) !important;
+}
+.bg-dark-blue{
+    background-color: rgba(4,11,23,1) !important;
+}
+
+
+/* colors end */
+
+
+/* font begin */
+
+.font_11 {
+    font-size: 1.1rem !important;
+}
+
+.font_12 {
+    font-size: 1.2rem !important;
+}
+
+.font_13 {
+    font-size: 1.3rem !important;
+}
+
+.font_14 {
+    font-size: 1.4rem !important;
+}
+
+.font_15 {
+    font-size: 1.5rem !important;
+}
+
+.font_16 {
+    font-size: 1.6rem !important;
+}
+
+.font_18 {
+    font-size: 1.8rem !important;
+}
+
+.font_23{
+    font-size: 2.3rem !important;
+}
+
+.font_34 {
+    font-size: 3.4rem !important;
+}
+
+
+/* font end */
+
+
+/* app begin */
+
+html, body {
+    width: 100%;
+    margin: auto;
+    /*height: 100%;*/
+    /*overflow: hidden;*/
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "思源黑体", "Microsoft YaHei", "微软雅黑", "MicrosoftJhengHei", "华文细黑", "Helvetica", "Arial", "sans-serif";
+    padding: 0;
+    margin: 0;
+}
+body,
+.app-page-header>*{
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+body{
+    background-attachment:fixed;
+}
+
+.app-body {
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 400ms ease;
+    -moz-transition: -moz-transform 400ms ease;
+    -o-transition: -o-transform 400ms ease;
+    transition: transform 400ms ease;
+}
+
+
+.app-header,
+.app-page-header {
+    height: 4.4rem;
+    margin: 0 1.3rem;
+    font-size: 1.3rem;
+    line-height: 4.4rem;
+}
+
+.app-page-header{
+    position: relative;
+}
+.app-page-header>div{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    z-index: 3;
+}
+.app-content{
+    position:relative;
+}
+
+
+
+/*
+.app-content {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}*/
+
+
+/*
+.scrollable {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.scrollable-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrollable-header,
+.scrollable-footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: block;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.scrollable-header {
+  top: 0;
+}
+
+.scrollable-footer {
+  bottom: 0;
+}*/
+
+
+/* app end */
+
+
+/* buttons begin */
+
+
+/* buttons end */
+
+
+/* grid begin */
+
+
+/* grid end */
+
+
+/* tab begin */
+
+
+/* tab end */
+
+
+/* util begin */
+.box-shadowed{
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-cut{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+
+/* util end */
+
+
+/* list begin */
+
+.m-list {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-width: 1px 0;
+}
+
+.m-list>li {
+    padding-right: 1.3rem;
+    margin-left: 1.3rem;
+    border-bottom: 0.1rem solid #eee;
+    position: relative;
+}
+
+.m-list>li:last-child {
+    border-bottom: none;
+}
+
+.m-list>li.arrow:after {
+    content: "";
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    border-width: 0 0.1rem 0.1rem 0;
+    -webkit-transform: rotate(-45deg);
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    margin-top: -0.5rem;
+}
+
+.m-list-noline>*, .m-list-noline {
+    border: none;
+}
+
+
+/* list end */
+
+
+/* table grid begin */
+
+.m-table {
+    display: table;
+    width: 100%;
+}
+
+.m-table>* {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.m-table>*>* {
+    /*display:inline-block;
+    width:100%;*/
+}
+
+.m-table-top>* {
+    vertical-align: top;
+}
+
+.m-table-bottom>* {
+    vertical-align: bottom;
+}
+
+.m-table .m-table-full {
+    display: block;
+    width: 100%;
+}
+
+.m-table .m-table-pre {
+    white-space: pre;
+}
+
+
+/* table grid end */
+
+
+/* flex grid begin */
+
+.m-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    width: 100%;
+}
+
+.m-flex>*:not(label) {
+    display: block;
+    width: 100%;
+}
+
+.m-flex>*:not(label), .m-flex>.col {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.m-flex>label {
+    display: inline-block;
+    width: 50px;
+}
+
+
+/* flex grid end */
+
+
+/* star begin */
+
+.star, .star>* {
+    font-family: 'mikeFonts' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.3rem;
+}
+
+.star:before {
+    color: rgba(255, 210, 0, 1);
+}
+
+.star:after {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.star_0:after {
+    content: "\e904\e904\e904\e904\e904 ";
+}
+
+.star_1:before {
+    content: "\e904";
+}
+
+.star_1:after {
+    content: "\e904\e904\e904\e904";
+}
+
+.star_2:before {
+    content: "\e904\e904";
+}
+
+.star_2:after {
+    content: "\e904\e904\e904";
+}
+
+.star_3:before {
+    content: "\e904\e904\e904";
+}
+
+.star_3:after {
+    content: "\e904\e904";
+}
+
+.star_4:before {
+    content: "\e904\e904\e904\e904";
+}
+
+.star_4:after {
+    content: "\e904";
+}
+
+.star_5:before {
+    content: "\e904\e904\e904\e904\e904";
+}
+
+
+/* star end */

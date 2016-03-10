@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title id="app-title" v-text="title"></title>
+     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../src/assets/styles/common.css">
+
+    <link rel="stylesheet" href="../src/assets/styles/facility.css">
+</head>
+
+<body>
+    <section class="hotelFacility">
+        <header></header>
+        <section>
+            <ul class="m-list">
+                <li>
+                    <div class="m-table">
+                        <div>
+                            <span><i class="ico ico_traffic"></i>交通</span>
+                        </div>
+                        <div>
+                            地铁2号线、6号线
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="m-table">
+                        <div>
+                            <span><i class="ico ico_facility"></i>设施</span>
+                        </div>
+                        <div>
+                            棋牌室，公共wifi
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="m-table">
+                        <div>
+                            <span><i class="ico ico_service"></i>服务</span>
+                        </div>
+                        <div>
+                            叫醒服务
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="m-table">
+                        <div>
+                            <span><i class="ico ico_describ"></i>介绍</span>
+                        </div>
+                        <div>
+                            华丽旅馆位于上海市徐汇区老沪闵路235号上海南站旁，旅馆提供24小时热水，电视，空调，上网。
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="m-table">
+                        <div>
+                            <span><i class="ico ico_policy"></i>政策</span>
+                        </div>
+                        <div>
+                            离店时间：12:00以后
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <div class="floatBox">
+        <div class="moreBox" id="moreBox">
+            <a href="javascript:;" class="btn-ico">1</a>
+            <a href="javascript:;" class="btn-ico">2</a>
+            <a href="javascript:;" class="btn-ico">3</a>
+        </div>
+        <a href="javascript:;" class="btn-more btn-ico" id="moreBtn">...</a>
+    </div>
+</body>
+
+</html>
+<style>
+    .floatBox{
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+        z-index: 5;
+    }
+    .btn-more{
+
+    }
+    .moreBox{
+        display: none;
+    }
+    .moreBox.on{
+        display: block;
+        overflow: hidden;
+        -webkit-animation: showBlock 200ms ease-in;
+    }
+    .btn-ico{
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        line-height: 5rem;
+        background-color: rgba(0,0,0,0.3);
+        color: rgba(255,255,255,0.7);
+        border-radius: 50%;
+        margin-top: 0.5rem;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.4rem;
+    }
+    @-webkit-keyframes showBlock { 
+        0%{
+            height:0px;
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            height:16.5rem;
+        }
+    }
+</style>
+<script>
+    var moreBtn=document.getElementById('moreBtn'),
+        moreBox=document.getElementById('moreBox'),
+        isShowMore=false;
+
+    window.onload=function(){
+        moreBtn.onclick=function(){
+            isShowMore=!isShowMore;
+            if(isShowMore){
+                moreBtn.className+=' on';
+                moreBox.className+=' on';
+            }else{
+               moreBtn.className=moreBtn.className.replace(/\s{1}on/g,''); 
+               moreBox.className=moreBox.className.replace(/\s{1}on/g,''); 
+            }
+        }
+    }
+</script>

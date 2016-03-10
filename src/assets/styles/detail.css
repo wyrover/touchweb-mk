@@ -1,0 +1,120 @@
+.hotelDetail{
+
+}
+/* header */
+.hotelDetail header ul{
+    background: #4C445C;
+}
+.hotelDetail header a{
+    text-decoration: none;
+    color: rgba(255,255,255,1);
+}
+
+.hotelDetail header a i{
+    display: inline-block;
+}
+
+.hotelDetail header a>div:first-child{
+    width: 100%;
+}
+.hotelDetail header a>div:last-child{
+    padding-right:15px;
+}
+
+/* hotelBaseBox */
+.hotelDetail .hotelBaseBox{
+    padding-top:20px;
+}
+.hotelDetail .hotelBaseBox div img{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    display: none;
+}
+.hotelDetail .hotelBaseBox div img:first-child{
+    display: block;
+}
+.hotelDetail .hotelBaseBox>h3,
+.hotelDetail .hotelBaseBox>div,
+.hotelDetail .hotelBaseBox>ul{
+    text-align: center;
+    color: #fff;
+}
+.hotelDetail .hotelBaseBox>h3{
+    font-size: 14px;
+    font-weight: 300;
+}
+.hotelDetail .hotelBaseBox ul a,
+.hotelDetail .hotelBaseBox>div{
+    color: #999;
+    text-decoration: none;
+}
+.hotelDetail .hotelBaseBox ul a i{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.3);
+    margin: auto;
+    margin-bottom: 5px;
+}
+.hotelDetail .hotelBaseBox ul{
+    margin: 10px 0;
+}
+
+/* hotelRoomBox */
+.hotelDetail .hotelRoomBox{
+    padding-bottom:20px;
+}
+.hotelDetail .ico{
+    position: relative;
+    border:1px solid transparent;
+}
+.hotelDetail .ico:after{
+    content:'';
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 8px;
+    top:8px;
+    background-image: url(../images/detail.png?v=20160229);   
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat; 
+    position: relative;
+}
+.hotelDetail .ico_comments:after{
+    background-position: center 0%;
+}
+.hotelDetail .ico_facility:after{
+    background-position: center 9%;
+}
+.hotelDetail .ico_gps:after{
+    background-position: center 18%;
+}
+.hotelDetail .ico_tel:after{
+    background-position: center 27%;
+}
+.hotelDetail .ico_fav:after{
+    background-position: center 91%;
+}
+.hotelDetail .ico_fav.on:after{
+    background-position: center 99%;
+}
+.hotelDetail .ico_calendar{
+    vertical-align: middle;
+}
+.hotelDetail .ico_calendar:after{
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top:0;
+    vertical-align: middle;
+}
+.hotelDetail .ico_calendar:after{
+    background-position: center 37%;
+}
+
